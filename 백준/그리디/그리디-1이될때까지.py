@@ -20,3 +20,6 @@ while True:
 
 answer += N-1
 print(answer)
+
+# 17 4 -> 3
+# 25 5 -> 2

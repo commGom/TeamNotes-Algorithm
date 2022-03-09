@@ -13,3 +13,6 @@ for i in range(1, len(number_list)):
     else:
         answer = result
 print(answer)
+
+# 02984 -> 576
+# 567 -> 210
