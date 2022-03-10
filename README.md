@@ -29,6 +29,42 @@ input_sorted_list=sorted(list(map(int, input().rstrip().split())), reverse=True)
 
 ```
 
+## 재귀함수 (Recursive Function) : 자기자신을 다시 호출하는 함수
+- 호출하면 stack과 같은 형태로 함수가 메모리에 차례대로 쌓여서 동작
+- 컴퓨터 메모리 한정된 크기만큼 자원을 가지고 있기 때문에 함수가 종료되지 않고 쌓이면서 호출만 하게 된다면 빠르게 메모리 과부하 재귀 기피 제한 설정
+- while이나 for 문 없이 내용을 반복적으로 수행 가능, 재귀함수의 종료 조건 명시 필요(프로그램이 정해진 값을 반환할 수 있도록 설정)
+
+- 무한루프 재귀함수
+
+```python
+
+def recursive_function():
+    print('재귀함수 호출')
+    recursive_function()
+
+
+recursive_function()
+
+```
+
+- 종료조건 명시 재귀함수
+
+```python
+
+def recursive_function(i):
+    # 종료 조건 명시 : i가 100일 경우 종료
+    if i == 100:
+        return
+    print(i, '번째 재귀함수에서', i+1, '번째 재귀함수 호출하는 중')
+    recursive_function(i+1)
+
+
+recursive_function(1)
+
+
+```
+
+
 ## 백준
 ### 그리디
 | 분류       | 제목              | 날짜 | 비고 |
@@ -87,3 +123,40 @@ int(val)
 answer = ''.join(answer_alpha)+str(answer_digit)
 
 ```
+
+### 자료구조
+| 분류       | 제목              | 날짜 | 비고 |
+| -------- | ----------------- | ------ |-----------------|
+| 자료구조   | stack        | 22-03-10      |리스트 뒷 idx 원소부터 출력|
+| 자료구조   | queue        | 22-03-10      |from collections import deque|
+
+- 리스트 뒷 idx 원소부터 출력
+
+```python
+
+stack = []
+
+# 삽입(5) -> 삽입 (2) -> 삽입(3) -> 삭제() -> 삽입(1) -> 삽입(4) -> 삭제()
+stack.append(5)
+stack.append(2)
+stack.append(3)
+stack.pop()
+stack.append(1)
+stack.append(4)
+stack.pop()
+
+print(stack[::-1])  # 끝 idx 원소부터 출력 [1,2,5]
+print(stack)  # idx : 0 원소부터 출력 [5,2,1]
+
+```
+
+### 재귀함수
+- 복잡한 알고리즘을 간결하게 작성 가능
+- 재귀함수는 반복문으로 동일한 기능 구현 가능
+- 스택 라이브러리 대신 재귀 함수 이용하는 경우가 있다.
+
+| 분류       | 제목              | 날짜 | 비고 |
+| -------- | ----------------- | ------ |-----------------|
+| 재귀함수   | 팩토리얼 구현        | 22-03-10      |반복적으로 구현, 재귀적으로 구현|
+| 재귀함수   | 팩토리얼 구현        | 22-03-10      |반복적으로 구현, 재귀적으로 구현|
+
