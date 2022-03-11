@@ -156,6 +156,8 @@ answer = ''.join(answer_alpha)+str(answer_digit)
 | -------- | ----------------- | ------ |-----------------|
 | 자료구조   | stack        | 22-03-10      |리스트 뒷 idx 원소부터 출력|
 | 자료구조   | queue        | 22-03-10      |from collections import deque|
+| 자료구조   | 우선순위큐        | 22-03-11      |import heapq|
+| 자료구조   | 트리순회        | 22-03-11      |전위, 중위, 후위 순회|
 
 - 리스트 뒷 idx 원소부터 출력
 
@@ -177,6 +179,23 @@ print(stack)  # idx : 0 원소부터 출력 [5,2,1]
 
 ```
 
+- 힙자료구조에 값 넣고 빼기 (파이썬은 MIN heap)
+
+```python
+
+import heapq
+
+# iterable은 임의의 갑들을 가진 자료형, h는 힙자료구조를 정의할 배열
+
+# 함수를 통해 들어오는 값의 모든 원소를 차례로 힙 자료구조에 넣는다
+for value in iterable:
+    heapq.heappush(h, value)
+
+# 힙에 삽입된 모든 원소를 차례대로 꺼내어 담기
+for _ in range(len(h)):
+    result.append(heapq.heappop(h))
+
+```
 ### 그래프 탐색 알고리즘 (DFS, BFS)
 
 | 분류       | 제목              | 날짜 | 비고 |
