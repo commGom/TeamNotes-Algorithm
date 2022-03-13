@@ -3,7 +3,7 @@ def insertion_sort(data):
         for j in range(i, 0, -1):
             if data[j-1] > data[j]:
                 data[j], data[j-1] = data[j-1], data[j]
-            else:
+            else:  # 작거나 같을 경우 앞에 부분은 다 정렬과정을 거쳐서 왔다.
                 break
 
 

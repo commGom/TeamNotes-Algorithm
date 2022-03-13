@@ -1,49 +1,5 @@
-# 정렬 
+array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
 
-## : 데이터를 특정 기준에 따라 순서대로 나열하는 것
-## : 상황에 따라서 적절한 정렬 알고리즘 이용
-## : 오름차순 기준으로 구현해 볼 것이다.
-
-## 선택 정렬 알고리즘 (Selection Sorting) -> O(N^2)
-### : 처리되지 않은 데이터 중에서 가장 작은 데이터를 선택해 맨 앞에 있는 데이터와 바꾸는 것 반복
-
-```python
-
-def selection_sort(data):
-    for i in range(len(data)):
-        min_idx = i  # 가장 작은 원소 값을 찾아서 index를 변수 지정하여 i 위치에 있는 값과 원소값 바꾸기
-        for j in range(i+1, len(data)):
-            if data[min_idx] > data[j]:  # min_idx에 최소값을 찾기 위해 작은 값이 나오면 바꿔주기 위한 조건문
-                min_idx = j  # 인덱스 j에 있는 원소값이 작으면
-
-        data[i], data[min_idx] = data[min_idx], data[i]  # 값 change
-
-```
-
-## 삽입 정렬 알고리즘 (Insertion Sorting) 
-### : 처리되지 않은 데이터를 하나씩 골라 적절한 위치에 삽입 
-
-```python
-
-def insertion_sort(data):
-    for i in range(1, len(data)):
-        for j in range(i, 0, -1):
-            if data[j-1] > data[j]:
-                data[j], data[j-1] = data[j-1], data[j]
-            else:  # 작거나 같을 경우 앞에 부분은 다 정렬과정을 거쳐서 왔다.
-                break
-
-
-```
-
-## 퀵 정렬 알고리즘 (Quick Sorting) -> 평균적으로 : O(NlogN), pivot 값 설정에 따라 최악의 경우 N^2
-### : 기준 데이터(pivot)를 설정하고 그 기준보다 큰 데이터와 작은 데이터의 위치를 바꾸는 방법
-### : pivot을 기준으로 왼쪽은 큰 값 오른쪽은 작은 값, 재귀적으로 호출해서 진행
-
-- 기본 로직 그대로 구현
-- 파이썬 문법 이용 (인덱스 슬라이싱, 리스트 컴프리헨션 이용)
-
-```python
 
 def quick_sort(array, start, end):
     # 원소가 1개인 경우 종료
@@ -74,6 +30,13 @@ def quick_sort(array, start, end):
     quick_sort(array, start, right-1)
     quick_sort(array, right+1, end)
 
+
+quick_sort(array, 0, len(array)-1)
+print(array)
+
+array2 = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
+
+
 def quick_sort_using_python(array):
     # 리스트가 하나의 원소만 담고 있으면 종료
     if len(array) <= 1:
@@ -91,9 +54,5 @@ def quick_sort_using_python(array):
     # 분할 이후 왼쪽 부분과 오른쪽 부분에서 각각 정렬 재귀호출해주고 가운데는 pivot 넣고 전체 리스트 반환
     return quick_sort_using_python(left_side)+[pivot]+quick_sort_using_python(right_side)
 
-```
 
-## 계수 정렬 -> O(N+K) : 데이터 개수 N, 데이터 중 최댓값이 K일 때
-### : 특정 조건이 부합할 때만 사용할 수 있지만 매우 빠르게 동작한다.
-### : 데이터의 크기 범위가 제한되어 정수 형태로 표현할 수 있을 때 사용 
-### : 공간복잡도는 크지만, 시간복잡도는 작다 (데이터가 터무니 없이 클 경우 비효율적, 같은 값이 많을 경우 효율적이다.)
+print(quick_sort_using_python(array2))
