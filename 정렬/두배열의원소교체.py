@@ -23,7 +23,7 @@ for _ in range(K):
         arr_B[0] = tmp
         arr_A.sort()
         arr_B.sort(reverse=True)
-        # print(arr_A, arr_B)
+        # print(arr_A, arr_B) 
     else:
         break
 
