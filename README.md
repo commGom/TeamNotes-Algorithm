@@ -43,6 +43,35 @@ input_sorted_list=sorted(list(map(int, input().rstrip().split())), reverse=True)
 
 ```
 
+## 해쉬(Hash), 딕셔너리 (매핑형 자료 구조)
+
+- dic=dict() or dic={}을 이용하여 정의
+- key:value 쌍으로 구성
+- 인덱싱을 대신하여 ["key"]값으로 접근
+- dic[key]=value로 값 설정 가능 (단일 수정)
+- dic.update({key:value}) : 키가 없는 값이면 추가, 키가 있는 값이면 변경 (다중 수정)
+- del dic[key] : 딕셔너리에서 해당 key값을 가지는 key,value 쌍 삭제
+- dic.keys() : 키 값들을 리스트로 받는다
+- dic.values() : value 값들을 리스트로 받는다
+- dic.items() : (key,value) 튜플로 구성된 값들을 리스트로 받는다
+- dic.get(key) : 해당 하는 key대한 value를 가져옴, dic.get(key,key)하면 없을 경우 key값을 그대로
+- dic.copy() or copy(dic) : 딕셔너리 복사
+- 'key' in dic : dictionary 안에 해당 키값을 가지고 있는지 확인 (필요시 for문 이용하면서 if 조건문 사용하면 될 듯)
+
+```python
+    dic=dict()  #dic={}
+    for key, val in dic:
+        print("key={key}, value={value}".format(key=key,value=val))
+
+    for key in dic: # for key in dic.keys()
+        print(f"key={key}") # f string 이용
+        print("value={value}".format(value=dic[key]))  # string format 이용 
+
+    for val in dic.values():
+        print(f"value={value}")
+    
+```
+
 ## 재귀함수 (Recursive Function) : 자기자신을 다시 호출하는 함수
 
 - recursion limit 설정
