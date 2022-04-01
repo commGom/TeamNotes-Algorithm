@@ -127,6 +127,37 @@ recursive_function(1)
 | 재귀함수   | 팩토리얼 구현        | 22-03-10      |반복적으로 구현, 재귀적으로 구현|
 | 재귀함수   | 팩토리얼 구현        | 22-03-10      |반복적으로 구현, 재귀적으로 구현|
 
+## 순열조합
+
+### 순열 permutation
+
+```python
+
+import itertools
+
+arr = ['A', 'B', 'C']
+r=2
+list_nPr = itertools.permutations(arr, r)
+
+# 결과 : [('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'C'), ('C', 'A'), ('C', 'B')]
+
+```
+
+### 조합 combination
+
+```python
+
+import itertools
+
+arr = ['A', 'B', 'C']
+r=2
+nCr = itertools.combinations(arr, r)
+print(list(nCr))
+
+# 결과 : [('A', 'B'), ('A', 'C'), ('B', 'C')]
+
+```
+
 ## 백준
 
 ### 그리디
