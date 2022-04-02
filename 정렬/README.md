@@ -4,6 +4,26 @@
 ## : 상황에 따라서 적절한 정렬 알고리즘 이용
 ## : 오름차순 기준으로 구현해 볼 것이다.
 
+## python sort()함수 이용
+
+### key lambda 사용하기
+
+```python
+
+data_list.sort()
+data_list.sort(key=lambda x : len(x))
+
+print(data_list)
+
+for index in range(len(data_list)) : 
+    data_len = len(data_list[index])
+    data_list[index] = (data_list[index], data_len)
+
+data_list.sort(key = lambda x :(x[1], x[0]))
+print(data_list)
+
+
+```
 ## 선택 정렬 알고리즘 (Selection Sorting) -> O(N^2)
 ### : 처리되지 않은 데이터 중에서 가장 작은 데이터를 선택해 맨 앞에 있는 데이터와 바꾸는 것 반복
 
@@ -21,6 +41,7 @@ def selection_sort(data):
 ```
 
 ## 삽입 정렬 알고리즘 (Insertion Sorting) 
+
 ### : 처리되지 않은 데이터를 하나씩 골라 적절한 위치에 삽입 
 
 ```python
