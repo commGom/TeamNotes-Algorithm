@@ -1,5 +1,18 @@
 # TeamNotes-Algorithm
 
+## 시간 측정 
+
+```python
+
+import time
+
+start = time.time()
+# 로직 구현
+end = time.time()
+print(end-start)
+
+```
+
 ## 입력
 
 - 문자열로 받은 숫자 한자리씩 리스트로 저장, 2차원 배열로 저장
