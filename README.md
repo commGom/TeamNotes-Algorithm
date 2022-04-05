@@ -15,6 +15,14 @@ print(end-start)
 
 ## 입력
 
+- 문자열로 받은 문자 한자리씩 리스트로 저장
+
+```python
+
+    characters = list(map(str, characters))
+
+```
+
 - 문자열로 받은 숫자 한자리씩 리스트로 저장, 2차원 배열로 저장
 
 ```python
