@@ -13,6 +13,14 @@ print(end-start)
 
 ```
 
+## 반복문 for문 거꾸로
+
+```python
+    arr=[]
+    for i in range(len(arr)-1, -1, -1):
+        print(i)
+```
+
 ## 입력
 
 - 문자열로 받은 문자 한자리씩 리스트로 저장
