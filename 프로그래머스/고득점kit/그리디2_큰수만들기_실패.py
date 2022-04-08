@@ -6,7 +6,7 @@ def solution(number, k):
     number = list(map(str, number))
     extracted_list = list(combinations(number, len(number)-k))
     for extracted_number in extracted_list:
-        print(extracted_number)
+        # print(extracted_number)
         compared_answer = "".join(extracted_number)
         answer = max(answer, compared_answer)
     return answer

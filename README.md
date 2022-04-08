@@ -86,6 +86,7 @@ input_sorted_list=sorted(list(map(int, input().rstrip().split())), reverse=True)
 - dic.get(key) : 해당 하는 key대한 value를 가져옴, dic.get(key,key)하면 없을 경우 key값을 그대로
 - dic.copy() or copy(dic) : 딕셔너리 복사
 - 'key' in dic : dictionary 안에 해당 키값을 가지고 있는지 확인 (필요시 for문 이용하면서 if 조건문 사용하면 될 듯)
+- https://blockdmask.tistory.com/566 => dictionary 정렬
 
 ```python
     dic=dict()  #dic={}
