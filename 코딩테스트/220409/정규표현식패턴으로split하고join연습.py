@@ -6,3 +6,5 @@ example = "abxdeydeabz"
 for pattern in patterns:
     example = "".join(example.split(pattern))
 print(example)
+
+
